@@ -8,15 +8,16 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import { MyContext } from "../../context/data/MyContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../App.css";
 
 function Navbar() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const navigate=useNavigate();
  
   const context = useContext(MyContext);
-  const {fetchAllProducts, fetchProductsByCategory ,searchQuery,setSearchQuery,fetchSearchedProducts,cart} = context;
+  const {fetchAllProducts, fetchProductsByCategory ,searchQuery,setSearchQuery,fetchSearchedProducts,cart,accessToken} = context;
 
   useEffect(() => {
     fetchCategories();
@@ -65,7 +66,7 @@ function Navbar() {
     <>
       <div className="upperPart">
         <div className="upperleftpart">
-          <div className="logo">
+          <div className="logo" >
             <img src={AmazonLogo} alt="Amazon Logo" />
           </div>
         </div>
@@ -128,15 +129,24 @@ function Navbar() {
             <h4>& Orders</h4>
           </div>
 
-           <Link to="/cart" className="cart">
-        <div className="cartlogo">
-          <ShoppingCartOutlinedIcon style={{ fontSize: '35px' }} />
-          <p>{cart}</p> 
-        </div>
-        <div className="cartname">
-          <p style={{fontSize:"30px"}}>Cart</p>
-        </div>
-      </Link>
+      
+         <div>
+      {accessToken ? (
+        <Link to="/cart" className="cart">
+          <div className="cartlogo">
+            <ShoppingCartOutlinedIcon style={{ fontSize: '35px' }} />
+            <p>{cart.length}</p>
+          </div>
+          <div className="cartname">
+            <p style={{ fontSize: "30px" }}>Cart</p>
+          </div>
+        </Link>
+      ) : (
+       
+        <Link to="/SignIn">SignIn to see Cart</Link>
+      )}
+    </div>
+
         </div>
       </div>
       <div className="lowerPart">

@@ -9,7 +9,9 @@ const MyProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cart, setCart] = useState([]);
-  
+  const [accessToken,setAccessTocken]=useState("");
+
+  console.log(products.price)
 
   useEffect(() => {
     fetchAllProducts();
@@ -54,7 +56,10 @@ const MyProvider = ({ children }) => {
   };
 
   const addToCart = (product) => {
-    setCart([...cart , product]);
+    setCart(prevCart=>{
+      const updatedCart=[...prevCart,product];
+      return updatedCart
+    });
   };
 
   const removeFromCart = (productId) => {
@@ -78,7 +83,7 @@ const MyProvider = ({ children }) => {
         cart,
         setCart,
         addToCart,
-        removeFromCart
+        removeFromCart,accessToken,setAccessTocken
       }}
     >
       {children}

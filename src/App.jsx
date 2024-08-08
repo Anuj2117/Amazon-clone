@@ -19,11 +19,10 @@ function App() {
       <Navbar />
       <HeroSection/>
       <ProductList />
-      {/* <SearchResults /> */}
       <Routes>
-        <Route path="/" element={<Home />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/ProductList" element={<ProductList/>}/>
+        <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
         <Route path="/signin" element={<SignIn />} />
