@@ -50,8 +50,8 @@ const SignIn = () => {
         />
         <button type="submit">Sign In</button>
       </form>
-      <Link to="/SignUp">Create new Account</Link>
-      <button onClick={()=>handleExitform()}>X</button>
+      <Link to="/SignUp" className='createNewaccountLink'>Create new Account</Link>
+      <button onClick={()=>handleExitform()} className='exitFormsignUp'>X</button>
     </div>
   );
 };

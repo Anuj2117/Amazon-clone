@@ -158,7 +158,7 @@ ul{
 .upper-right{
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 /* -----------------Language------------- */
 
@@ -256,6 +256,7 @@ ul{
   padding:10px;
 }
 .lowerleft ul li{
+  font-size: 15px;
   padding:1px;
   &:hover{
     border:1px solid;
@@ -327,9 +328,9 @@ ul{
   position: absolute;
   display: flex;
   width: 60%;
-  height: 70%;
+  height: 65%;
   margin-left: 22%;
-  top: 60%;
+  top: 30%;
   background-color: rgba(231, 229, 229, 0.7); 
   border-radius: 20px;
   backdrop-filter: blur(5px) brightness(0.7); 
@@ -338,7 +339,7 @@ ul{
 
 .productPreview p{
   margin:10px;
-  font-size: 17px;
+  font-size: 15px;
 }
 .cartButton button{
   margin:10px;
@@ -356,6 +357,7 @@ ul{
     box-shadow: none;
   }
 }
+
 .exitformDetails{
   height: 30px;
   width: 50px;
@@ -363,7 +365,7 @@ ul{
   border: none;
 }
 /* 
-------------------------------------------------------------- */
+---------------------------productLIst---------------------------------- */
 .allProductWrapper{
   display: flex;
   flex-wrap: wrap;
@@ -379,6 +381,7 @@ ul{
   background-color: rgb(238, 237, 237);
   border: none;
   border-radius: 10px;
+  padding:10px;
 }
 .thumbnail{
   width: 40%;
@@ -386,16 +389,25 @@ ul{
   background-color: white;
   border-radius: 10px;
 }
-/* .thumbnail img{
-  width: 100%;
-} */
+
 .infodiv{
   width: 60%;
 }
 .infodiv p {
   margin:10px;
+  font-size: 18px;
 }
-/* ---------------------signupform---------------------------- */
+.ViewMoreDetails{
+  color: #f29b29;
+  text-decoration: none;
+  &:hover{
+    color:#d97f09
+  }
+}
+
+
+
+/* ---------------------signInform---------------------------- */
 /* SignIn.css */
 .signInContainer {
   position: absolute;
@@ -408,11 +420,12 @@ ul{
   width: 40%;
   height: 50%;
   margin-left: 30%;
-  top: 60%;
+  top: 30%;
   background-color: rgba(231, 229, 229, 0.7); 
   border-radius: 20px;
   backdrop-filter: blur(5px) brightness(0.7); 
   -webkit-backdrop-filter: blur(5px) brightness(0.7); 
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .signInContainer h2 {
@@ -461,9 +474,35 @@ ul{
   font-size: 0.9rem;
   text-align: center;
 }
+.SignInButton{
+  color: white;
+  margin-Left: 30px;
+  text-Decoration: none;
+  font-Size: "20px";
+  background-Color: #d97f09 ;
+  padding:12px;
+  border-Radius:10px;
+  &:hover{
+    background-color:#b86c07  ;
+  }
+}
+.createNewaccountLink{
+  text-decoration: none;
+  font-size: 17px;
+  margin:15px;
+}
+.exitFormsignUp{
+  padding:5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  background-color:#f6910d;
+  border:none;
+  
 
-/* -----------------------signupform ------------------- */
-/* src/components/SignUp.css */
+}
+/* -----------------------signUpform ------------------- */
 
 .signUpContainer {
   position: absolute;
@@ -476,7 +515,7 @@ ul{
   width: 40%;
   height: 50%;
   margin-left: 30%;
-  top: 60%;
+  top: 30%;
   background-color: rgba(231, 229, 229, 0.7); 
   border-radius: 20px;
   backdrop-filter: blur(5px) brightness(0.7); 
@@ -531,13 +570,57 @@ ul{
 .signUpForm button:hover {
   background-color: #0056b3;
 }
-
-
-
-
-
-
-
+.exitSignUpform{
+  position: absolute;
+  top:0;
+  right: 0;
+  padding:5px;
+  width: 25px;
+  border:none;
+  background-color: #ed8a08;
+}
+/* -----------------------cartcss--------------------------- */
+.cartwrapper{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  min-height:150px; 
+  margin-left: 30%;
+  top: 60%;
+  background-color: rgba(237, 233, 233, 0.7); 
+  border-radius: 20px;
+  backdrop-filter: blur(5px) brightness(0.7); 
+  -webkit-backdrop-filter: blur(5px) brightness(0.7); 
+}
+.cartItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:20px;
+  margin:20px;
+  border-radius: 20px;
+}
+.cartItemImage{
+  width: 150px;;
+  height: 150px;
+  background-color: white;
+  border-radius: 20px;
+}
+.removeButton{
+  width: 140px;
+  border: none;
+  background-color:#de8107 ;
+  font-size: 13px;
+  font-weight: 600;
+  margin:10px;
+  border-radius: 20px;
+  padding:10px;
+}
 
 
 

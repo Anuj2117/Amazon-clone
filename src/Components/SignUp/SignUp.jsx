@@ -46,7 +46,7 @@ const SignUp = () => {
         </form>
         
       </div>
-      <button onClick={()=>handleExitSignUP()}>X</button>
+      <button onClick={()=>handleExitSignUP() } className="exitSignUpform">X</button>
     </div>
   );
 };

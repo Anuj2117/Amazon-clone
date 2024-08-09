@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { MyContext } from "../../context/data/MyContext";
+import StarIcon from "@mui/icons-material/Star";
 import "../../App.css";
 
 const ProductDetails = () => {
@@ -9,9 +10,10 @@ const ProductDetails = () => {
   const navigate=useNavigate();
 
   const { products, addToCart ,accessToken} = useContext(MyContext);
-  console.log(addToCart)
+  console.log(products)
 
   const singlePrduct = products.find(product => Number(product.id)=== Number(id));
+  console.log(singlePrduct + "singleProduct");
 
   if (!singlePrduct) return <div>Loading...</div>;
 
@@ -33,7 +35,11 @@ const ProductDetails = () => {
  const handleExit=()=>{
   navigate('/ProductList')
  }
- console.log(singlePrduct);
+ let Star = [];
+          for (let i = 0; i < singlePrduct.rating; i++) {
+            Star.push(<StarIcon key={i} style={{color:"yellow"}}/>);
+          }
+ console.log(singlePrduct.rating);
   return (
     <div className="productDetails">
       {/* <h2>Product Details</h2> */}
@@ -47,6 +53,7 @@ const ProductDetails = () => {
           <p><strong>Description:</strong> {singlePrduct.description}</p>
           <p><strong>Category:</strong> {singlePrduct.category}</p>
           <p><strong>Price:</strong> ${singlePrduct.price}</p>
+          <p>{Star}</p>
 
           <div className="cartButton">
          

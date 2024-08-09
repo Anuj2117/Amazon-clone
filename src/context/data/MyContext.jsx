@@ -11,8 +11,6 @@ const MyProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [accessToken,setAccessTocken]=useState("");
 
-  console.log(products.price)
-
   useEffect(() => {
     fetchAllProducts();
   }, []);
@@ -25,7 +23,6 @@ const MyProvider = ({ children }) => {
   const fetchAllProducts = async () => {
     try {
       const data = await getDataFromAPI("https://dummyjson.com/products");
-      console.log();
       setAllProducts(data.products);
       setFilteredProducts(data.products);
     } catch (error) {

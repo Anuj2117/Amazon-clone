@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const { products, fetchAllProducts, filteredProducts, searchQuery } = useContext(MyContext);
-  
+
   
   const [whatToDisplay, setWhatToDisplay] = useState([]);
 
@@ -56,7 +56,7 @@ const ProductList = () => {
             <p>
               <strong>Category:</strong> {product.category}
             </p>
-            <Link to={`/product/${product.id}`} style={{margin:"10px"}}>View Details</Link>
+            <Link to={`/product/${product.id}`} style={{margin:"10px"}} className="ViewMoreDetails">View Details</Link>
             </div>
           </div>
         ))}

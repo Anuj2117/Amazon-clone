@@ -18,8 +18,8 @@ function App() {
     <Router>
       <Navbar />
       <HeroSection/>
-      <ProductList />
       <Routes>
+        <Route path='/' element={<Home/>}/>
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/ProductList" element={<ProductList/>}/>
         <Route path="/cart" element={<Cart />} />
