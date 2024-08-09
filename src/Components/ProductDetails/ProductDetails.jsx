@@ -7,65 +7,97 @@ import "../../App.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  const { products, addToCart ,accessToken} = useContext(MyContext);
-  console.log(products)
+  const { products, addToCart, accessToken } = useContext(MyContext);
+  console.log(products);
 
-  const singlePrduct = products.find(product => Number(product.id)=== Number(id));
+  const singlePrduct = products.find(
+    (product) => Number(product.id) === Number(id)
+  );
   console.log(singlePrduct + "singleProduct");
 
   if (!singlePrduct) return <div>Loading...</div>;
 
-  const handleCart = (item) =>{
-    if(accessToken){
-    addToCart(item)
-    }else{
-      alert("Please signIn for add Product in cart...!!!")
+  const handleCart = (item) => {
+    if (accessToken) {
+      alert(`new item added`)
+      addToCart(item);
+    } else {
+      alert("Please signIn for add Product in cart...!!!");
+      navigate("/SignIn");
     }
+  };
+  const handleBuy = (item) => {
+    if (accessToken) {
+      navigate("/Checkout");
+    } else {
+      alert("Please signIn for Buy Product...!!!");
+      navigate("/SignIn");
+    }
+  };
+  const handleExit = () => {
+    navigate("/ProductList");
+  };
+  let Star = [];
+  for (let i = 0; i < singlePrduct.rating; i++) {
+    Star.push(<StarIcon key={i} style={{ color: "yellow" }} />);
   }
-  const handleBuy =(item)=>{
-    if(accessToken){
-      navigate('/Checkout')
-    }
-    else{
-      alert("Please signIn for Buy Product...!!!")
-    }
-  }
- const handleExit=()=>{
-  navigate('/ProductList')
- }
- let Star = [];
-          for (let i = 0; i < singlePrduct.rating; i++) {
-            Star.push(<StarIcon key={i} style={{color:"yellow"}}/>);
-          }
- console.log(singlePrduct.rating);
+  console.log(singlePrduct.rating);
+
+
   return (
     <div className="productDetails">
-      {/* <h2>Product Details</h2> */}
-      <div style={{ margin: "10px", padding: "10px", display:"flex", alignItems:"center", justifyContent:"center" }}>
+      <div
+        style={{
+          margin: "10px",
+          padding: "10px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <div className="productImage">
-          <img src={singlePrduct.thumbnail} alt={singlePrduct.title} style={{ width: "300px", height: "300px",backgroundColor:"white", borderRadius:"20px" }} />
+          <img
+            src={singlePrduct.thumbnail}
+            alt={singlePrduct.title}
+            style={{
+              width: "300px",
+              height: "300px",
+              backgroundColor: "white",
+              borderRadius: "20px",
+            }}
+          />
         </div>
         <div className="productPreview">
-          <p><strong>ID:</strong> {singlePrduct.id}</p>
-          <p><strong>Name:</strong> {singlePrduct.title}</p>
-          <p><strong>Description:</strong> {singlePrduct.description}</p>
-          <p><strong>Category:</strong> {singlePrduct.category}</p>
-          <p><strong>Price:</strong> ${singlePrduct.price}</p>
+          <p>
+            <strong>ID:</strong> {singlePrduct.id}
+          </p>
+          <p>
+            <strong>Name:</strong> {singlePrduct.title}
+          </p>
+          <p>
+            <strong>Description:</strong> {singlePrduct.description}
+          </p>
+          <p>
+            <strong>Category:</strong> {singlePrduct.category}
+          </p>
+          <p>
+            <strong>Price:</strong> ${singlePrduct.price}
+          </p>
           <p>{Star}</p>
 
           <div className="cartButton">
-         
-          
-            <button onClick={() => handleCart(singlePrduct)}>Add to Cart</button>
-            <button onClick={()=>handleBuy(singlePrduct)}>Buy now</button>
-
+            <button onClick={() => handleCart(singlePrduct)}>
+              Add to Cart
+            </button>
+            <button onClick={() => handleBuy(singlePrduct)}>Buy now</button>
           </div>
         </div>
-
       </div>
-      <button onClick={()=>handleExit()} className="exitformDetails">X</button>
+      <button onClick={() => handleExit()} className="exitformDetails">
+        X
+      </button>
     </div>
   );
 };

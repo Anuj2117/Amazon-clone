@@ -2,7 +2,7 @@
   padding:0;
   margin: 0;
   box-sizing: border-box;
-  
+  font-family: "Roboto", sans-serif;
 }
 Link{
   text-decoration: none;
@@ -80,7 +80,7 @@ ul{
 }
 .selector{
   height: 40px;
-  width: 9%;
+  width: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,7 +102,7 @@ ul{
   font-size: 13px;
 }
 .selector select{
-  width: 100%;
+  max-width: 50px;
   height: 100%;
   border: none;
   background-color:#cdcdcd ;
@@ -126,13 +126,16 @@ ul{
 }
 .searchbutton{
   height: 40px;
-  width: 8%;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f08804;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+.SearchIcon{
+  margin:8px;
 }
 .category-dropdown {
   display: block;
@@ -256,7 +259,7 @@ ul{
   padding:10px;
 }
 .lowerleft ul li{
-  font-size: 15px;
+  font-size: 14px;
   padding:1px;
   &:hover{
     border:1px solid;
@@ -588,10 +591,10 @@ ul{
   justify-content: center;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 40%;
+  width: 50%;
   min-height:150px; 
   margin-left: 30%;
-  top: 60%;
+  top: 40%;
   background-color: rgba(237, 233, 233, 0.7); 
   border-radius: 20px;
   backdrop-filter: blur(5px) brightness(0.7); 
@@ -621,8 +624,30 @@ ul{
   border-radius: 20px;
   padding:10px;
 }
-
-
+/* ---------------paymentpage-------------- */
+.paymentPage{
+  position: absolute;
+  left:40% ;
+  top:40%;
+  width: 20%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(231, 229, 229, 0.7); 
+  border-radius: 20px;
+  backdrop-filter: blur(5px) brightness(0.7); 
+  -webkit-backdrop-filter: blur(5px) brightness(0.7); 
+}
+.paymentPage button{
+  margin:20px;
+  border:none;
+  background-color: #f28f0f;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+}
 
 /* Mobile Devices */
 @media (max-width: 768px) {

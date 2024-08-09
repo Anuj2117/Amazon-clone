@@ -113,7 +113,7 @@ function Navbar() {
             />
           </div>
           <div className="searchbutton" onClick={handleSearch}>
-            <SearchOutlinedIcon />
+            <SearchOutlinedIcon className="SearchIcon" />
           </div>
         </div>
 
