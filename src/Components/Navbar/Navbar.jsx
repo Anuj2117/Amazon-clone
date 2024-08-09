@@ -125,7 +125,7 @@ function Navbar() {
           </div>
 
           <div className="signin">
-            <p>Hello, sign in</p>
+            <p>Hello</p>
             <div className="accountinfo">
               <h5>Account and Lists </h5>
               <ArrowDropDownIcon />
@@ -133,8 +133,8 @@ function Navbar() {
           </div>
 
           <div className="return">
-            <p>Returns</p>
-            <h4>& Orders</h4>
+            <p>Returns <b>& Order</b></p>
+            
           </div>
 
           <div>
@@ -171,8 +171,6 @@ function Navbar() {
             <li>Today's Deals</li>
             <li>Mobiles</li>
             <li>Prime</li>
-            <li>Customer Service</li>
-            <li>Electronics</li>
             <li>Fashion</li>
             <li>New Releases</li>
             <li>Home & Kitchen</li>

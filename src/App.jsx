@@ -12,6 +12,7 @@ import Checkout from './Components/Checkout/Checkout';
 import OrderConfirmation from './Components/Orderconfirmation/OrderConfirmation';
 import SignIn from './Components/SignIn/SignIn';
 import SignUp from './Components/SignUp/SignUp';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

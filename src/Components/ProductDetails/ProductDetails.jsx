@@ -62,8 +62,8 @@ const ProductDetails = () => {
             src={singlePrduct.thumbnail}
             alt={singlePrduct.title}
             style={{
-              width: "300px",
-              height: "300px",
+              width: "100%",
+              height: "100%",
               backgroundColor: "white",
               borderRadius: "20px",
             }}

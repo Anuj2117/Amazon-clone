@@ -42,7 +42,7 @@ const ProductList = () => {
             <img
               src={product.thumbnail}
               alt={product.title}
-              style={{ width: "180px", height: "180px" }}
+              style={{ width: "100%", height: "100%" }}
               />
             </div>
             <div className="infodiv">

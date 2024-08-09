@@ -11,7 +11,7 @@ const Cart = () => {
   <div className="cartwrapper">
     <h2 className="cartTitle">Shopping Cart</h2>
     {cart.length === 0 ? (
-      <p className="cartEmpty">Your cart is empty</p>
+      <p className="cartEmpty">Your cart is empty 🥺</p>
 
     ) : (
       <div >
