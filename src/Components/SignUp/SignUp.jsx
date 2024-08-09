@@ -20,7 +20,7 @@ const SignUp = () => {
   };
  const handleExitSignUP =()=>{
   console.log("anuj")
-     navigation('./ProductDetails');
+  navigation('/');
  }
   return (
     <div className="signUpContainer">
