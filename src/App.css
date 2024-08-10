@@ -15,6 +15,14 @@ Link{
 ul{
   list-style: none;
 }
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
 /* 
 -------------------------upper nav style-------------------- */
 .upperPart{
@@ -244,6 +252,7 @@ ul{
 }
 .SignInButton{
   color: white;
+  margin-right: 10px;
   text-Decoration: none;
   font-Size: "20px";
   background-Color: #d97f09 ;
@@ -262,7 +271,13 @@ ul{
 }
 .lowerleft{
   width: 80%;
-  
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.lowerleft .hamburger{
+  display: none;
+  color: white;
 }
 .lowerleft ul{
   width: 100%;
@@ -271,7 +286,7 @@ ul{
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content:space-between;
 }
 .lowerleft ul li{
   font-size: 13px;
@@ -288,7 +303,8 @@ ul{
 .lowerright{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content:center;
+  margin-left: 5%;
 }
 
 .lowerright img{
@@ -734,7 +750,7 @@ ul{
 /* ------------------------mediaquery---------------------- */
 
 
-@media  (max-width: 1024px) {
+@media  (max-width: 1070px) {
   .searchBar{
    min-width: 60%;
   }
@@ -766,6 +782,10 @@ ul{
     width: 100%;
     object-fit: cover;
   }
+  .singleProduct{
+    min-height: 70vh;
+    width: 30%;
+  }
 }
 
 @media  (max-width: 870px){
@@ -795,4 +815,41 @@ ul{
     footer{
       margin-top:0%;
     }
+}
+
+@media  (max-width: 720px){
+  .lowerright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lowerright img{
+    height: 30px;
+    object-fit:contain;
+  }
+  .singleProduct{
+    min-height: 70vh;
+    width: 40%;
+  }
+}
+@media (max-width:650px) {
+  .lowerleft ul{
+   display: none;
+  }
+  .lowerleft{
+    padding:10px;
+  }
+  .lowerleft .hamburger{
+    display: flex;
+    font-size: 25px;
+  }
+  .lowerright img{
+    height: 35px;
+    object-fit:contain;
+  }
+  .singleProduct{
+    min-height: 70vh;
+    width: 40%;
+  }
 }

@@ -9,11 +9,13 @@ const Cart = () => {
  console.log(cart);
  return (
   <div className="cartwrapper">
+    
     <h2 className="cartTitle">Shopping Cart</h2>
     {cart.length === 0 ? (
       <p className="cartEmpty">Your cart is empty 🥺</p>
 
-    ) : (
+    ) : 
+    (
       <div >
         {cart.map((product, index) => (
           <div key={index} className="cartItem">

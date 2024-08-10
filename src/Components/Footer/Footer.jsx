@@ -15,6 +15,7 @@ const Footer = () => {
       <div className="footer-top">
         <a href="#" className="back-to-top">Back to top</a>
       </div>
+
       <div className="footer-middle">
         <div className="footer-section">
           <h4>Get to Know Us</h4>

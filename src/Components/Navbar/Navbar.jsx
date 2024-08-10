@@ -161,9 +161,11 @@ function Navbar() {
       </div>
       <div className="lowerPart">
         <div className="lowerleft">
+        <MenuSharpIcon className="hamburger" />
           <ul>
             <li>
               <MenuSharpIcon />
+              
             </li>
             <li>Amazon miniTV</li>
             <li>Sell</li>
